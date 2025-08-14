@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Project Runway Corp — Ticket Brokerage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Scaled a secondary-market ticket brokerage to $1 M+ net sales with pricing analytics & workflow automation.">
+  <meta property="og:title" content="Project Runway Corp — Ticket Brokerage">
+  <meta property="og:url"   content="https://projectrunwayinc.com/">
+  <meta name="theme-color"  content="#0b1020">
+
+  <!-- typeface & favicon -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <style>
+    /* ==========  CSS variables  ========== */
+    :root{
+      --bg:#0b1020;         --card:#12182b;     --muted:#aab3c7;   --ink:#e8eefc;
+      --accent:#a78bfa;     --accent-2:#7dd3fc; --ok:#34d399;
+      --radius:16px;        --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+
+    /* reset & globals */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif}
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+
+    /* header / nav */
+    header{position:sticky;top:0;z-index:99;background:rgba(11,16,32,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;align-items:center;gap:24px;font-weight:500}
+    nav ul{display:flex;gap:22px;list-style:none}
+    nav li a{padding:.4rem .7rem;border-radius:8px;transition:.2s}
+    nav li a:is(:hover,:focus){background:var(--accent);color:#0b1020}
+
+    .logo{width:34px;height:34px;border-radius:8px;background:conic-gradient(from 200deg,var(--accent),var(--accent-2))}
+
+    /* hero */
+    .hero{
+      padding:96px 0 72px;
+      background:
+        url("https://images.unsplash.com/photo-1659456690967-bad366de0000?q=80&w=1546&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center/cover no-repeat,
+        linear-gradient(180deg,#000000c0 0%,#0b1020 60%);
+      position:relative;overflow:hidden
+    }
+    .hero::after{
+      content:"";position:absolute;inset:auto 0 -1px 0;height:80px;
+      background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' fill='%230b1020'><path d='M0 160L60 154.7C120 149 240 139 360 144C480 149 600 171 720 176C840 181 960 171 1080 149.3C1200 128 1320 96 1380 80L1440 64V320H0Z'/></svg>")
+        center/cover no-repeat
+    }
+    h1{font-size:clamp(2.8rem,7vw,4.6rem);line-height:1.05;font-weight:700;margin-bottom:28px;text-shadow:0 0 8px rgba(0,0,0,.55),0 2px 4px rgba(0,0,0,.4)}
+    @supports (-webkit-text-stroke:1px white){
+      h1{-webkit-text-stroke:1px rgba(0,0,0,.65);paint-order:stroke fill}
+    }
+    .sub{color:var(--muted);font-size:1.125rem;margin-bottom:46px;max-width:680px}
+
+    /* buttons */
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-size:1rem;font-weight:600;border-radius:12px;cursor:pointer;border:2px solid transparent;transition:transform .15s,box-shadow .15s}
+    .btn-solid{background:var(--accent);color:#0b1020}.btn-solid:hover{opacity:.85}
+    .btn-outline{border-color:var(--accent);background:transparent}.btn-outline:hover{background:rgba(255,255,255,.08)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.4)}
+
+    /* grid helpers */
+    .grid{display:grid;gap:18px}.cols-2{grid-template-columns:repeat(2,1fr)}.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media(max-width:900px){.cols-3,.cols-2{grid-template-columns:1fr}}
+
+    /* card */
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,.45)}
+    .section-title{font-size:1.5rem;margin-bottom:10px}
+
+    /* tags / KPI */
+    .tag{display:inline-block;padding:4px 10px;border-radius:999px;font-size:.75rem;background:rgba(255,255,255,.1);color:var(--muted)}
+    .kpi{position:relative;text-align:center}
+    .kpi .num{font-size:2.8rem;font-weight:700;margin:.3rem 0}
+    .kpi::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(circle at 50% 0%,#ffffff1a 0%,transparent 70%)}
+
+    footer{padding:50px 0;text-align:center;color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div class="logo" aria-hidden="true"></div>
+      <strong>Project Runway Corp</strong>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero"    class="scroll">Home</a></li>
+        <li><a href="#about"   class="scroll">About</a></li>
+        <li><a href="#features"class="scroll">Features</a></li>
+        <li><a href="#metrics" class="scroll">Metrics</a></li>
+        <li><a href="#document" class="scroll">Document</a></li>
+        <li><a href="#contact" class="scroll">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="hero scroll">
+  <div class="wrap">
+    <h1>Direct&nbsp;tickets, direct&nbsp;savings</h1>
+    <p class="sub">Project Runway secures tickets directly and lists them for less than the big resale sites—same great seats, lower price, zero hassle.</p>
+    <div style="display:flex;gap:18px;flex-wrap:wrap">
+      <a class="btn btn-outline" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="wrap scroll">
+  <div class="card">
+    <h2 class="section-title">About</h2>
+    <p>Project Runway Corp launched in Aug 2022 to arbitrage price inefficiencies across ticket marketplaces. By June 2024 we cleared $1 M+ in net sales.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="wrap grid cols-3 scroll">
+  <div class="card"><h3>Dynamic pricing</h3><p>Real-time scans of seat inventory across platforms capture optimal spreads.</p></div>
+  <div class="card"><h3>Automated inventory</h3><p>AI agents parse confirmations & PDFs, auto-tag inventory, and reconcile payouts daily.</p></div>
+  <div class="card"><h3>Risk controls</h3><p>Refund & chargeback thresholds keep exposure under <span class="tag">&lt;2 %</span>.</p></div>
+</section>
+
+<!-- METRICS -->
+<section id="metrics" class="wrap grid cols-3 scroll">
+  <div class="card kpi"><span class="tag">Net sales</span><div class="num">$1.05 M</div><div class="muted">Jan 2023 – Dec 2024</div></div>
+  <div class="card kpi"><span class="tag">Orders</span><div class="num">1,954</div><div class="muted">Avg order value <strong>$537</strong></div></div>
+  <div class="card kpi"><span class="tag">Tickets sold</span><div class="num">4,209</div><div class="muted">Across 695 events</div></div>
+</section>
+
+<!-- DOCUMENT -->
+<section id="document" class="wrap scroll">
+  <div class="card">
+    <h2 class="section-title">Document Vault</h2>
+    <p class="muted">Redacted docs backing every metric.</p>
+    <div class="grid cols-2" style="margin-top:18px">
+      <a class="card" href="/document/1099k-2023-redacted.pdf" target="_blank">1099-K (2023)</a>
+      <a class="card" href="/document/1099k-2024-redacted.pdf" target="_blank">1099-K (2024)</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="wrap scroll">
+  <div class="card" style="text-align:center">
+    <h2 class="section-title">Interested in Project Runway Corp?</h2>
+    <a class="btn btn-solid" href="mailto:projectrunwayinc@gmail.com">projectrunwayinc@gmail.com</a>
+    <div style="margin-top:14px"><a href="https://www.linkedin.com/company/project-runway-corp" target="_blank">LinkedIn</a></div>
+  </div>
+</section>
+
+<footer>© 2022-2024 Project Runway Corp · Forest Hills, NY</footer>
+</body>
+</html>
