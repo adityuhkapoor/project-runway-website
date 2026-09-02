@@ -2,195 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Project Runway Corp — Ticket Brokerage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Secondary-market ticket brokerage — $1M+ in net sales since 2022.">
-  <meta property="og:title" content="Project Runway Corp — Ticket Brokerage">
-  <meta property="og:url"   content="https://projectrunwayinc.com/">
-  <meta name="theme-color"  content="#0b1020">
-
-  <!-- typeface & favicon -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/favicon.png">
-
+  <title>Project Runway Corp — Historical Operating Record</title>
+  <meta name="description" content="The documented operating record of Project Runway Corp, a New York ticket brokerage active from 2022 through 2024.">
+  <meta property="og:title" content="Project Runway Corp — Historical Operating Record">
+  <meta property="og:description" content="$1.04M+ in documented 2023-2024 marketplace payouts, with source records and definitions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://projectrunwayinc.com/">
+  <meta name="theme-color" content="#f4f0e7">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <style>
-    /* ==========  CSS variables  ========== */
-    :root{
-      --bg:#0b1020;         --card:#12182b;     --muted:#aab3c7;   --ink:#e8eefc;
-      --accent:#a78bfa;     --accent-2:#7dd3fc; --ok:#34d399;
-      --radius:16px;        --shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-
-    /* reset & globals */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif}
-
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1100px;margin:0 auto;padding:24px}
-
-    /* header / nav */
-    header{position:sticky;top:0;z-index:99;background:rgba(11,16,32,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
-    nav{display:flex;align-items:center;gap:24px;font-weight:500}
-    nav ul{display:flex;gap:22px;list-style:none}
-    nav li a{padding:.4rem .7rem;border-radius:8px;transition:.2s}
-    nav li a:is(:hover,:focus){background:var(--accent);color:#0b1020}
-
-    .logo{width:34px;height:34px;border-radius:8px;background:conic-gradient(from 200deg,var(--accent),var(--accent-2))}
-
-    /* hero */
-    .hero{
-      padding:96px 0 72px;
-      background:
-        url("https://images.unsplash.com/photo-1659456690967-bad366de0000?q=80&w=1546&auto=format&fit=crop") center/cover no-repeat,
-        linear-gradient(180deg,#000000c0 0%,#0b1020 60%);
-      position:relative;overflow:hidden
-    }
-    .hero::after{
-      content:"";position:absolute;inset:auto 0 -1px 0;height:80px;
-      background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' fill='%230b1020'><path d='M0 160L60 154.7C120 149 240 139 360 144C480 149 600 171 720 176C840 181 960 171 1080 149.3C1200 128 1320 96 1380 80L1440 64V320H0Z'/></svg>") center/cover no-repeat
-    }
-    h1{font-size:clamp(2.8rem,7vw,4.6rem);line-height:1.05;font-weight:700;margin-bottom:28px;text-shadow:0 0 8px rgba(0,0,0,.55),0 2px 4px rgba(0,0,0,.4)}
-    @supports (-webkit-text-stroke:1px white){
-      h1{-webkit-text-stroke:1px rgba(0,0,0,.65);paint-order:stroke fill}
-    }
-
-    .sub{color:var(--muted);font-size:1.125rem;margin-bottom:46px;max-width:680px}
-    .hero .sub{
-  text-shadow:0 0 6px rgba(0,0,.85,.95), 0 2px 3px rgba(0,0,.55,.75);
-}
-    /* buttons */
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-size:1rem;font-weight:600;border-radius:12px;cursor:pointer;border:2px solid transparent;transition:transform .15s,box-shadow .15s}
-    .btn-outline{border-color:var(--accent);background:transparent}.btn-outline:hover{background:rgba(255,255,255,.08)}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.4)}
-
-    /* platform-themed buttons */
-    .btn-email   {background:linear-gradient(135deg,#34d399 0%,#059669 100%);color:#0b1020}
-    .btn-linkedin{background:linear-gradient(135deg,#0a66c2 0%,#004182 100%);color:#fff}
-    .btn-email:hover,
-    .btn-linkedin:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.45),0 0 8px rgba(255,255,255,.25) inset}
-
-    /* grid helpers */
-    .grid{display:grid;gap:18px}
-    .cols-2{grid-template-columns:repeat(2,1fr)}
-    .cols-3{grid-template-columns:repeat(3,1fr)}
-    @media(max-width:900px){.cols-3,.cols-2{grid-template-columns:1fr}}
-
-    /* card */
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
-    .card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,.45)}
-    .section-title{font-size:1.5rem;margin-bottom:10px}
-
-    /* tags / KPI */
-    .tag{display:inline-block;padding:4px 10px;border-radius:999px;font-size:.75rem;background:rgba(255,255,255,.1);color:var(--muted)}
-    .kpi{position:relative;text-align:center}
-    .kpi .num{font-size:2.8rem;font-weight:700;margin:.3rem 0}
-    .kpi::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(circle at 50% 0%,#ffffff1a 0%,transparent 70%)}
-
-    footer{padding:50px 0;text-align:center;color:var(--muted);font-size:.9rem}
+    :root{--paper:#f4f0e7;--deep:#e9e2d4;--ink:#171711;--muted:#666258;--line:#c9c0af;--signal:#c8ff38;--white:#fffdf7;--max:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}a{color:inherit}a:focus-visible{outline:3px solid var(--ink);outline-offset:4px}.wrap{width:min(calc(100% - 40px),var(--max));margin:auto}.mono{font-family:"SFMono-Regular",Consolas,monospace}.eyebrow{margin:0 0 18px;font:700 .76rem/1.2 "SFMono-Regular",Consolas,monospace;letter-spacing:.12em;text-transform:uppercase}.muted{color:var(--muted)}
+    .archive{background:var(--ink);color:var(--white);padding:9px 20px;text-align:center;font:700 .72rem/1.3 "SFMono-Regular",Consolas,monospace;letter-spacing:.08em;text-transform:uppercase}
+    header{border-bottom:1px solid var(--line);background:rgba(244,240,231,.95)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;letter-spacing:-.02em}.mark{width:28px;height:28px;background:var(--signal);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink)}nav ul{display:flex;gap:26px;margin:0;padding:0;list-style:none}nav a{font-size:.88rem;font-weight:700;text-underline-offset:5px}
+    .hero{padding:92px 0 74px;border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.55fr);gap:72px;align-items:end}h1{max-width:880px;margin:0;font-size:clamp(3.2rem,8vw,7.6rem);line-height:.88;letter-spacing:-.075em}.hero-copy{max-width:680px;margin:30px 0 0;font-size:clamp(1.05rem,2vw,1.35rem)}.hero-note{border-left:4px solid var(--ink);padding:4px 0 4px 22px}.hero-note strong{display:block;margin-bottom:8px}.hero-note p{margin:0;color:var(--muted);font-size:.9rem}
+    .proof-strip{background:var(--signal);border-bottom:1px solid var(--ink)}.proof-grid{display:grid;grid-template-columns:1.3fr repeat(3,1fr)}.proof-cell{min-height:138px;padding:24px;border-right:1px solid var(--ink);display:flex;flex-direction:column;justify-content:space-between}.proof-cell:first-child{border-left:1px solid var(--ink)}.label{font:700 .7rem/1.2 "SFMono-Regular",Consolas,monospace;letter-spacing:.08em;text-transform:uppercase}.value{font-size:clamp(1.65rem,3.3vw,3.2rem);font-weight:800;letter-spacing:-.05em;line-height:1}.small{font-size:.82rem}
+    section{scroll-margin-top:24px}.section{padding:92px 0;border-bottom:1px solid var(--line)}.section-head{display:grid;grid-template-columns:240px 1fr;gap:44px;margin-bottom:46px}h2{margin:0;max-width:760px;font-size:clamp(2.1rem,4vw,4.2rem);line-height:.98;letter-spacing:-.055em}h3{margin:0;font-size:1.08rem;letter-spacing:-.02em}
+    .ledger{border-top:2px solid var(--ink)}.ledger-row{display:grid;grid-template-columns:110px 1.1fr .8fr .9fr;gap:24px;align-items:baseline;padding:27px 0;border-bottom:1px solid var(--line)}.year{font-size:1.3rem;font-weight:800}.amount{font-size:clamp(1.65rem,3vw,3rem);font-weight:800;letter-spacing:-.045em}.source,.detail{color:var(--muted);font-size:.9rem}
+    .callout{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink);background:var(--white);box-shadow:10px 10px 0 var(--ink)}.callout>div{padding:32px}.callout>div+div{border-left:1px solid var(--ink)}.big{display:block;margin:12px 0 8px;font-size:clamp(2.1rem,5vw,4.8rem);line-height:1;font-weight:800;letter-spacing:-.06em}.callout p{margin:0;color:var(--muted)}
+    .evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.evidence-card{min-height:310px;padding:28px;border:1px solid var(--ink);background:var(--white);display:flex;flex-direction:column}.status{align-self:flex-start;margin-bottom:36px;padding:6px 9px;border:1px solid var(--ink);background:var(--signal);font:700 .68rem/1 "SFMono-Regular",Consolas,monospace;letter-spacing:.08em;text-transform:uppercase}.status.pending{background:var(--deep)}.evidence-card h3{font-size:1.6rem}.evidence-card p{color:var(--muted)}.meta{margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font:.78rem/1.55 "SFMono-Regular",Consolas,monospace}.document-link{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;margin-top:18px;padding:14px 16px;border:2px solid var(--ink);background:var(--ink);color:var(--white);font-weight:800;text-decoration:none}.document-link:hover{background:var(--signal);color:var(--ink)}
+    .definitions{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.definition{min-height:210px;padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.definition p{color:var(--muted);font-size:.92rem}
+    .contact{background:var(--ink);color:var(--white)}.contact .section-head{margin-bottom:34px}.contact .eyebrow,.contact .muted{color:#bbb7ad}.contact-links{display:flex;gap:12px;flex-wrap:wrap}.button{display:inline-flex;padding:13px 18px;border:1px solid var(--white);color:var(--white);font-weight:800;text-decoration:none}.button.primary{background:var(--signal);border-color:var(--signal);color:var(--ink)}.button:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--white)}
+    footer{padding:26px 0;background:var(--ink);color:#bbb7ad;border-top:1px solid #3e3d38;font-size:.78rem}.footer-row{display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:820px){.wrap{width:min(calc(100% - 28px),var(--max))}.nav{min-height:68px}nav ul{gap:14px}nav li:nth-child(2){display:none}.hero{padding:66px 0 54px}.hero-grid,.section-head{grid-template-columns:1fr;gap:34px}.proof-grid{grid-template-columns:1fr 1fr}.proof-cell:first-child{border-left:0}.proof-cell:nth-child(even){border-right:0}.proof-cell:nth-child(-n+2){border-bottom:1px solid var(--ink)}.ledger-row{grid-template-columns:70px 1fr;gap:10px 18px}.ledger-row .source,.ledger-row .detail{grid-column:2}.callout,.evidence-grid,.definitions{grid-template-columns:1fr}.callout>div+div{border-left:0;border-top:1px solid var(--ink)}.footer-row{flex-direction:column}}
+    @media(max-width:520px){nav li:not(:last-child){display:none}h1{font-size:clamp(3rem,18vw,5rem)}.proof-grid{grid-template-columns:1fr}.proof-cell,.proof-cell:nth-child(-n+2){border-right:0;border-bottom:1px solid var(--ink)}.proof-cell:last-child{border-bottom:0}.section{padding:68px 0}.ledger-row{grid-template-columns:1fr}.ledger-row .source,.ledger-row .detail{grid-column:1}.callout{box-shadow:6px 6px 0 var(--ink)}}
   </style>
 </head>
 <body>
-
-<!-- inline SVG symbols for icons -->
-<svg style="display:none">
-  <symbol id="mail-ico" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.01L12 13 20 6.01V6H4zm0 12h16V8l-8 7-8-7v10z"/>
-  </symbol>
-  <symbol id="in-ico" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M19 0H5C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8 19H5V9h3v10zM6.6 7.8C5.6 7.8 5 7.1 5 6.3 5 5.4 5.6 4.8 6.6 4.8s1.6.6 1.6 1.5c0 .8-.6 1.5-1.6 1.5zM20 19h-3v-5.5c0-1.3-.4-2.2-1.6-2.2-.9 0-1.4.6-1.7 1.1-.1.2-.1.5-.1.8V19h-3V9h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2 0 3.6 1.3 3.6 4.2V19z"/>
-  </symbol>
-</svg>
-
-<header>
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
-    <div style="display:flex;align-items:center;gap:14px;">
-      <div class="logo" aria-hidden="true"></div>
-      <strong>Project Runway Corp</strong>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#hero"    class="scroll">Home</a></li>
-        <li><a href="#about"   class="scroll">About</a></li>
-        <li><a href="#features"class="scroll">Features</a></li>
-        <li><a href="#metrics" class="scroll">Metrics</a></li>
-        <li><a href="#document" class="scroll">Document</a></li>
-        <li><a href="#contact" class="scroll">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<!-- ARCHIVED BANNER -->
-<div role="note" aria-label="Archived notice" style="background:#3b2a14;border-bottom:1px solid #6b4a1a;color:#fde68a;text-align:center;padding:12px 24px;font-size:.95rem;font-weight:500;letter-spacing:.01em">
-  Operations ceased June 2024. This page preserved as a historical record.
-</div>
-
-<!-- HERO -->
-<section id="hero" class="hero scroll">
-  <div class="wrap">
-    <h1>Direct&nbsp;tickets, direct&nbsp;savings</h1>
-    <p class="sub">We buy tickets at the source and resell them below what you'd pay on the big resale platforms.</p>
-    <div style="display:flex;gap:18px;flex-wrap:wrap">
-      <a class="btn btn-outline" href="#contact">Get in touch</a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="wrap scroll">
-  <div class="card">
-    <h2 class="section-title">About</h2>
-    <p>We started Project Runway in August 2022 buying and reselling event tickets—finding the gap between what platforms charge and what tickets are actually worth. By June 2024 we'd passed $1M in net sales.</p>
-    <p style="margin-top:12px;color:var(--muted)">Founded by Aditya Kapoor.</p>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section id="features" class="wrap grid cols-3 scroll">
-  <div class="card"><h3>Pricing</h3><p>We monitor seat prices across platforms and list when the margin is right.</p></div>
-  <div class="card"><h3>Automation</h3><p>Order confirmations, PDFs, and payouts are processed automatically—inventory stays tagged and reconciled without manual work.</p></div>
-</section>
-
-<!-- METRICS -->
-<section id="metrics" class="wrap grid cols-3 scroll">
-  <div class="card kpi"><span class="tag">Net sales</span><div class="num">$1.05 M</div><div class="muted">Jan 2023 – Dec 2024</div></div>
-  <div class="card kpi"><span class="tag">Orders</span><div class="num">1,954</div><div class="muted">Average order value <strong>$537</strong></div></div>
-  <div class="card kpi"><span class="tag">Tickets sold</span><div class="num">4,209</div><div class="muted">Across 695 events</div></div>
-</section>
-
-<!-- DOCUMENT -->
-<section id="document" class="wrap scroll">
-  <div class="card">
-    <h2 class="section-title">Document Vault</h2>
-    <p class="muted">Redacted docs backing every metric.</p>
-    <div class="grid cols-2" style="margin-top:18px">
-      <a class="card" href="/document/1099k-2023-redacted.pdf" target="_blank">1099-K (2023)</a>
-      <a class="card" href="/document/1099k-2024-redacted.pdf" target="_blank">1099-K (2024)</a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="wrap scroll">
-  <div class="card" style="text-align:center">
-    <h2 class="section-title">Get in touch</h2>
-
-    <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
-      <a class="btn btn-email" href="mailto:projectrunwayinc@gmail.com">
-        <svg width="20" height="20"><use href="#mail-ico"/></svg>
-        Email
-      </a>
-
-      <a class="btn btn-linkedin" href="https://www.linkedin.com/company/project-runway-corp" target="_blank" rel="noopener">
-        <svg width="20" height="20"><use href="#in-ico"/></svg>
-        LinkedIn
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>© 2022-2024 Project Runway Corp · New York, NY</footer>
+  <div class="archive">Archived business · Historical operating window: August 2022–December 2024</div>
+  <header><div class="wrap nav">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span>Project Runway Corp</a>
+    <nav aria-label="Primary navigation"><ul><li><a href="#record">Record</a></li><li><a href="#evidence">Evidence</a></li><li><a href="#method">Definitions</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+  </div></header>
+  <main id="top">
+    <section class="hero"><div class="wrap hero-grid">
+      <div><p class="eyebrow">New York ticket brokerage · Operating record</p><h1>The receipts,<br>not the pitch.</h1><p class="hero-copy">Project Runway Corp bought and resold live-event tickets from 2022 through 2024. This archive publishes the payment record behind the business—and labels exactly what each number means.</p></div>
+      <aside class="hero-note"><strong>Why this page exists</strong><p>To make the historical operating record inspectable. Sensitive identifiers are removed; underlying totals remain visible.</p></aside>
+    </div></section>
+    <section class="proof-strip" aria-label="Verified highlights"><div class="wrap proof-grid">
+      <div class="proof-cell"><span class="label">Documented 2023–2024 payouts</span><span class="value">$1.043M</span><span class="small">Lysted remittance portal</span></div>
+      <div class="proof-cell"><span class="label">Remittances</span><span class="value">107</span><span class="small">2023–2024</span></div>
+      <div class="proof-cell"><span class="label">Line items</span><span class="value">2,036</span><span class="small">2023–2024</span></div>
+      <div class="proof-cell"><span class="label">2023 tax cross-check</span><span class="value">Exact</span><span class="small">Portal total = 1099-K Box 1a</span></div>
+    </div></section>
+    <section id="record" class="section"><div class="wrap">
+      <div class="section-head"><p class="eyebrow">01 / Operating record</p><h2>Three years of documented marketplace payouts.</h2></div>
+      <div class="ledger" role="table" aria-label="Annual payout ledger">
+        <div class="ledger-row" role="row"><div class="year" role="cell">2022</div><div class="amount" role="cell">$29,904.21</div><div class="source" role="cell">Lysted payout ledger</div><div class="detail" role="cell">13 remittances · 43 line items · partial year from August</div></div>
+        <div class="ledger-row" role="row"><div class="year" role="cell">2023</div><div class="amount" role="cell">$531,637.42</div><div class="source" role="cell">Lysted + 1099-K</div><div class="detail" role="cell">54 remittances · 847 Lysted line items · 847 1099-K payment transactions</div></div>
+        <div class="ledger-row" role="row"><div class="year" role="cell">2024</div><div class="amount" role="cell">$512,093.85</div><div class="source" role="cell">Lysted payout ledger</div><div class="detail" role="cell">53 remittances · 1,189 line items</div></div>
+      </div>
+    </div></section>
+    <section class="section"><div class="wrap"><div class="callout">
+      <div><span class="eyebrow">2023–2024 combined</span><span class="big">$1,043,731.27</span><p>Cash payout total shown across 107 remittances in the authenticated Lysted consignment portal.</p></div>
+      <div><span class="eyebrow">Independent 2023 check</span><span class="big">$531,637.42</span><p>The 2023 Lysted total matches the issuer-provided Form 1099-K Box 1a to the cent.</p></div>
+    </div></div></section>
+    <section id="evidence" class="section"><div class="wrap">
+      <div class="section-head"><p class="eyebrow">02 / Evidence vault</p><h2>Primary documents, with sensitive fields removed.</h2></div>
+      <div class="evidence-grid">
+        <article class="evidence-card"><span class="status">Published</span><h3>2023 Form 1099-K</h3><p>Issuer-provided tax record showing Project Runway Corp, 847 payment transactions, and $531,637.42 in gross reportable payments.</p><a class="document-link" href="/output/pdf/1099k-2023-redacted.pdf" target="_blank" rel="noopener"><span>Open redacted PDF</span><span aria-hidden="true">↗</span></a><div class="meta">Tax IDs, addresses and account/reference number removed. The public PDF is flattened with no hidden text layer.</div></article>
+        <article class="evidence-card"><span class="status pending">Retrieval requested</span><h3>2024 Form 1099-K</h3><p>The original Track1099 recipient link expired. A replacement link has been requested directly from Automatiq Finance.</p><div class="meta">Status updated September 2, 2026. This card will link to a similarly flattened, redacted copy when received.</div></article>
+      </div>
+    </div></section>
+    <section id="method" class="section"><div class="wrap">
+      <div class="section-head"><p class="eyebrow">03 / Definitions</p><h2>No fuzzy math.</h2></div>
+      <div class="definitions">
+        <article class="definition"><h3>Payouts</h3><p>Amounts shown as paid in the Lysted remittance portal. These are the figures used for the 2022–2024 operating ledger above.</p></article>
+        <article class="definition"><h3>1099-K gross amount</h3><p>Gross reportable payments stated by the payment settlement entity. It is not a statement of profit, margin, cash on hand or company valuation.</p></article>
+        <article class="definition"><h3>Line items</h3><p>Rows within authenticated remittance records. A line item should not be assumed to equal one order, one ticket or one customer.</p></article>
+      </div>
+      <p class="muted" style="margin:24px 0 0;font-size:.82rem">Source scope: authenticated Lysted remittance records reviewed for August 2022–December 2024 and the issuer-provided 2023 Form 1099-K. Totals are historical payment volume, not net income.</p>
+    </div></section>
+    <section id="contact" class="section contact"><div class="wrap">
+      <div class="section-head"><p class="eyebrow">04 / Contact</p><div><h2>Project Runway Corp was founded by Aditya Kapoor.</h2><p class="muted">Questions about the archive or source methodology are welcome.</p></div></div>
+      <div class="contact-links"><a class="button primary" href="mailto:projectrunwayinc@gmail.com">Email</a><a class="button" href="https://www.linkedin.com/company/project-runway-corp" target="_blank" rel="noopener">LinkedIn</a></div>
+    </div></section>
+  </main>
+  <footer><div class="wrap footer-row"><span>© 2022–2024 Project Runway Corp · New York</span><span class="mono">Historical archive · Last evidence update 2026-09-02</span></div></footer>
 </body>
 </html>
